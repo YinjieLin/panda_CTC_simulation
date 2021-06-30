@@ -6,5 +6,5 @@ CXX_FLAGS =   -std=gnu++11
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/yjlin/.mujoco/mujoco200/include -I/home/yjlin/Documents/panda_sim_mujoco/include 
+CXX_INCLUDES = -I/home/yjlin/.mujoco/mujoco200/include -I/home/yjlin/panda_sim_mujoco/panda_simulation_CTC/include 
 

@@ -29,7 +29,6 @@ message(STATUS "MuJoCo lib: " ${LIB_MUJOCO})
 
 add_executable(${BIN_NAME} 
 src/my_sim_CTC.cpp
-
 )
 
 target_link_libraries(${BIN_NAME} ${LIB_MUJOCO})

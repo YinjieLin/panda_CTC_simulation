@@ -80,17 +80,17 @@ mjrender.h
 mjui.h
 /home/yjlin/.mujoco/mujoco200/include/mjui.h
 
-/home/yjlin/Documents/panda_sim_mujoco/src/my_sim_CTC.cpp
+/home/yjlin/panda_sim_mujoco/panda_simulation_CTC/src/my_sim_CTC.cpp
 mujoco.h
-/home/yjlin/Documents/panda_sim_mujoco/src/mujoco.h
+/home/yjlin/panda_sim_mujoco/panda_simulation_CTC/src/mujoco.h
 glfw3.h
-/home/yjlin/Documents/panda_sim_mujoco/src/glfw3.h
+/home/yjlin/panda_sim_mujoco/panda_simulation_CTC/src/glfw3.h
 stdio.h
-/home/yjlin/Documents/panda_sim_mujoco/src/stdio.h
+/home/yjlin/panda_sim_mujoco/panda_simulation_CTC/src/stdio.h
 stdlib.h
-/home/yjlin/Documents/panda_sim_mujoco/src/stdlib.h
+/home/yjlin/panda_sim_mujoco/panda_simulation_CTC/src/stdlib.h
 string.h
-/home/yjlin/Documents/panda_sim_mujoco/src/string.h
+/home/yjlin/panda_sim_mujoco/panda_simulation_CTC/src/string.h
 iostream
 -
 eigen3/Eigen/Dense

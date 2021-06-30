@@ -1,4 +1,0 @@
-Tue Jun 29 20:15:21 2021
-ERROR: Load model error: Error: PNG file load error 'empty input or file doesn't exist' in texture id = 2
-Object name = plane, id = 2, line = 29, column = 9
-
