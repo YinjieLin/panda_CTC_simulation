@@ -1,0 +1,328 @@
+
+<?xml version="1.0" ?>
+
+
+<mujoco model="panda">
+    <compiler angle="radian" coordinate="local" />
+    <!--<option gravity="0 0 -9.8" timestep = "0.001" cone="elliptic" impratio="20" noslip_iterations="1000">-->
+    <option gravity="0 0 -9.8" timestep = "0.001" cone="elliptic" impratio="20">
+        <flag override="enable" contact="enable"/>
+    </option>
+    <default>
+       <joint damping=".1"/>
+       <default class="visual">
+            <geom contype="0" conaffinity="0" rgba=".95 .99 .92 1"/>
+        </default>
+        <default class="collision">
+            <geom contype="1" conaffinity="1" rgba="1 1 1 1"/>
+        </default>
+        <default class="panda_finger">
+            <joint damping="100" armature="5"/>
+            <geom friction="1 0.5 0.0001" solref="0.01 1" solimp="0.8 0.9 0.001" margin="0.001" user="0" rgba="0.5 0.6 0.7 .4" contype="1" conaffinity="0" condim="6" group="3"/>
+            <position user="1002 40 2001 -0.0001 0.0001"/>
+        </default>
+    </default>
+    <asset>
+        <texture builtin="gradient" height="256" rgb1=".9 .9 1." rgb2=".2 .3 .4" type="skybox" width="256" />
+		<texture builtin="checker" height="512" name="texplane" rgb1=".2 .3 .4" rgb2=".1 0.15 0.2" type="2d" width="512" />
+        <material name="floorplane" reflectance="0.5" texrepeat="1 1" texture="texplane" texuniform="true" />
+        <texture name="plane" type="2d" file="wood.png" markrgb=".8 .8 .8"/>
+        <texture name="square_plane" type="2d" file="shadow_wood.png" markrgb=".8 .8 .8"/>
+        <texture name="real_scene" type = "2d" file="scene.png" markrgb=".8 .8 .8"/>
+        <material name="real_bg" texture="real_scene" />
+        <material name="wooden_square" texture="square_plane"/>
+        <material name="wooden_desk" texture="plane"/>
+        <mesh name="link0" file="meshes/link0.stl" />
+        <mesh name="link1" file="meshes/link1.stl" />
+        <mesh name="link2" file="meshes/link2.stl" />
+        <mesh name="link3" file="meshes/link3.stl" />
+        <mesh name="link4" file="meshes/link4.stl" />
+        <mesh name="link5" file="meshes/link5.stl" />
+        <mesh name="link6" file="meshes/link6.stl" />
+        <mesh name="link7" file="meshes/link7.stl" />
+        <mesh name="big_square" file="meshes/big_square.stl"/>
+        <mesh name="cylinder_pink" file="meshes/cylinder.stl"/>
+        <mesh name="five" file="meshes/five.stl"/>
+        <mesh name="three" file="meshes/triangle.stl"/>
+        <mesh name="square" file="meshes/square.stl"/>
+        <mesh name="realsense_frame" file="meshes/realsense.stl" scale ="0.001 0.01 0.001"/>
+        <mesh name="rs_camera" file="meshes/rs_camera.stl" scale ="0.001 0.001 0.001"/>
+
+        <mesh name="hand"  file="meshes/hand.stl" />
+        <mesh name="hand_vis"  file="meshes/hand_vis2.stl" />
+        <mesh name="finger" file="meshes/finger.stl"/>
+        <mesh name="finger_vis" file="meshes/finger_vis.stl"/>
+
+        <mesh name="three_1" file="meshes/modify_3_1.stl" scale ="0.001 0.001 0.001"/>
+        <mesh name="three_2" file="meshes/modify_3_2.stl" scale ="0.001 0.001 0.001"/>
+        <mesh name="three_3" file="meshes/modify_3_3.stl" scale ="0.001 0.001 0.001"/>
+
+        <mesh name="four_1" file="meshes/modify_4_1.stl" scale ="0.001 0.001 0.001"/>
+        <mesh name="four_2" file="meshes/modify_4_2.stl" scale ="0.001 0.001 0.001"/>
+        <mesh name="four_3" file="meshes/modify_4_3.stl" scale ="0.001 0.001 0.001"/>
+        <mesh name="four_4" file="meshes/modify_4_4.stl" scale ="0.001 0.001 0.001"/>
+
+        <mesh name="five_1" file="meshes/modify_5_1.stl" scale ="0.001 0.001 0.001"/>
+        <mesh name="five_2" file="meshes/modify_5_2.stl" scale ="0.001 0.001 0.001"/>
+        <mesh name="five_3" file="meshes/modify_5_3.stl" scale ="0.001 0.001 0.001"/>
+        <mesh name="five_4" file="meshes/modify_5_4.stl" scale ="0.001 0.001 0.001"/>
+        <mesh name="five_5" file="meshes/modify_5_5.stl" scale ="0.001 0.001 0.001"/>
+
+        <mesh name="round_hole" file="meshes/round.stl" scale ="0.001 0.001 0.001"/>
+
+
+
+
+        <mesh name="link0_vis" file="meshes/link0_vis.stl" />
+        <mesh name="link1_vis" file="meshes/link1_vis.stl" />
+        <mesh name="link2_vis" file="meshes/link2_vis.stl" />
+        <mesh name="link3_vis" file="meshes/link3_vis.stl" />
+        <mesh name="link4_vis" file="meshes/link4_vis.stl" />
+        <mesh name="link5_vis" file="meshes/link5_vis.stl" />
+        <mesh name="link6_vis" file="meshes/link6_vis.stl" />
+        <mesh name="link7_vis" file="meshes/link7_vis.stl" />
+        <mesh name="peg_base" file="meshes/peg_base.stl"/>
+        <mesh name="base" file="meshes/base.stl"/>
+        <mesh name="assem" file="meshes/small_ass.stl"/>
+        <mesh file="meshes/pedestal.stl" name="pedestal"/>
+        <!-- Custom textures based on body names for domain randomization -->
+        <texture type="cube" name="hand_tex" builtin="flat" width="100" height="100" rgb1="1 1 1" rgb2="1 1 1"/>
+        <texture type="cube" name="finger_tex" builtin="flat" width="100" height="100" rgb1="0.5 0.5 0.5" rgb2="0.5 0.5 0.5"/>
+
+        <!-- Custom mats based on body names for domain randomization -->
+        <material name="hand_mat" texture="hand_tex"/>
+        <material name="finger_mat" texture="finger_tex"/>
+    </asset>
+    <worldbody>
+        <geom condim="3" material="floorplane" name="floor" pos="0 0 0" size="3 3 .125" type="plane" />
+		<light name = "top_light" diffuse=".8 .8 .8" dir="-1 -1 -1" directional="true" pos="0.5 0.1 1.2" specular="0.1 0.1 0.1" castshadow="true"/>
+		<light diffuse=".8 .8 .8" dir="1 1 -1" directional="true" pos="0.2 0 1.2" specular="0.1 0.1 0.1" castshadow="true"/>
+		<light diffuse=".8 .8 .8" dir="0 -1 0" directional="true" pos="0.5 0 2.0" specular="0.1 0.1 0.1" castshadow="true"/>
+		<light diffuse=".8 .8 .8" dir="0 -.15 -1" directional="false" pos="-3. -3. 4.0" specular="0.5 0.5 0.5" castshadow="true"/>
+        <!--add camera info, the position and orientation is to be later determined-->
+        
+        
+        <camera mode="fixed" name="frontview" pos="3.0 0 1.85" quat="0.56 0.43 0.43 0.56" />
+		<camera mode="fixed" name="birdview" pos="0.0 0 3.0" quat="0.7071 0 0 0.7071" />
+		<camera mode="fixed" name="tabletop" pos="3.0 0 1.85" quat="0.56 0.43 0.43 0.56" />
+        
+        <body name="table" pos="0 0 1">
+            <geom class="collision" type="box" size="0.8 0.5 .5" pos="0.35 0 -.5" material="wooden_desk"  />
+            <!-- <include file="./hole.xml"/>-->
+            <body name="link0" pos="0 0 0">
+                <inertial euler="0 0 0" pos="0 0 0.05" mass="4" diaginertia="0.4 0.4 0.4" />
+                <geom type="mesh" contype="0" conaffinity="0" group="1" mesh="link0_vis" name="link0_visual" rgba=".95 .99 .92 1"/>
+                <geom class="collision" type="mesh" mesh="link0" rgba="1 1 1 1"/>
+                <!--
+                <site name="ee_1" pos="0.05 0 0" size="0.005 .1"  quat="0.707105 0 0.707108 0 " rgba="1 0 0 1" type="cylinder" group="1"/>
+                <site name="ee_2" pos="0 0 0.05" size="0.005 .1" quat="0.707105 0 0 0.707108" rgba="0 0 1 1" type="cylinder" group="1"/>
+                <site name="ee_3" pos="0 0.05 0" size="0.005 .1" quat="0.707105 0.707108 0 0" rgba="0 1 0 1" type="cylinder" group="1"/>
+                -->
+                <body name="link1" pos="0 0 0.333">
+                    <inertial euler="0 0 0" pos="0 0 -0.07" mass="3" diaginertia="0.3 0.3 0.3" />
+                    <!-- <joint name="joint1" axis="0 0 1" limited="true" range="-2.8973 2.8973" frictionloss="0.051" /> -->
+                    <joint name="joint1" axis="0 0 1" limited="true" range="-2.8973 2.8973" frictionloss="0.0" />
+                    <geom type="mesh" contype="0" conaffinity="0" group="1" mesh="link1_vis" name="link1_visual" rgba="1 1 1 1"/>
+                    <geom class="collision" type="mesh" mesh="link1_vis" />
+                    <body name="link2" pos="0 0 0" quat="0.707107 -0.707107 0 0">
+                        <inertial euler="0 0 0" pos="0 -0.1 0" mass="3" diaginertia="0.3 0.3 0.3" />
+                        <!-- <joint name="joint2" axis="0 0 1" limited="true" range="-1.7628 1.7628" frictionloss="0.051"/> -->
+                        <joint name="joint2" axis="0 0 1" limited="true" range="-1.7628 1.7628"  frictionloss="0.0"/>
+                        <geom type="mesh" contype="0" conaffinity="0" group="1" mesh="link2_vis" name="link2_visual" rgba="1 1 1 1"/>
+                        <geom class="collision" type="mesh" mesh="link2_vis" />
+                        <body name="link3" pos="0 -0.316 0" quat="0.707107 0.707107 0 0">
+                            <inertial euler="0 0 0" pos="0.04 0 -0.05" mass="2" diaginertia="0.2 0.2 0.2" />
+                            <!--<joint name="joint3" axis="0 0 1" limited="true" range="-2.8973 2.8973" frictionloss="0.051"/>-->
+                            <joint name="joint3" axis="0 0 1" limited="true" range="-2.8973 2.8973" frictionloss="0.0" />
+                            <geom type="mesh" contype="0" conaffinity="0" group="1" mesh="link3_vis" name="link3_visual" rgba="1 1 1 1"/>
+                            <geom class="collision" type="mesh" mesh="link3_vis" />
+                            <body name="link4" pos="0.0825 0 0" quat="0.707107 0.707107 0 0">
+                                <inertial euler="0 0 0" pos="-0.04 0.05 0" mass="2" diaginertia="0.2 0.2 0.2" />
+                                <!--<joint name="joint4" axis="0 0 1" limited="true" range="-3.0718 3.0718" />-->
+                                <joint name="joint4" axis="0 0 1" limited="true" range="-3.0718 3.0718" frictionloss="0.0" />
+                                <geom type="mesh" contype="0" conaffinity="0" group="1" mesh="link4_vis" name="link4_visual" rgba="1 1 1 1"/>
+                                <geom class="collision" type="mesh" mesh="link4_vis" />
+                                <body name="link5" pos="-0.0825 0.384 0" quat="0.707107 -0.707107 0 0">
+                                    <inertial euler="0 0 0" pos="0 0 -0.15" mass="2" diaginertia="0.2 0.2 0.2" />
+                                    <!-- <joint name="joint5" axis="0 0 1" limited="true" range="-2.8973 2.8973" />-->
+                                    <joint name="joint5" axis="0 0 1" limited="true" range="-2.8973 2.8973" frictionloss="0.0" />
+                                    <geom type="mesh" contype="0" conaffinity="0" group="1" mesh="link5_vis" name="link5_visual" rgba="1 1 1 1"/>
+                                    <geom class="collision" type="mesh" mesh="link5_vis" />
+                                    <body name="link6" quat="0.707107 0.707107 0 0">
+                                        <inertial euler="0 0 0" pos="0.06 0 0" mass="1.5" diaginertia="0.1 0.1 0.1" />
+                                        <!--<joint name="joint6" axis="0 0 1" limited="true" range="-3.7525 3.7525" />-->
+                                        <joint name="joint6" axis="0 0 1" limited="true" range="-3.7525 3.7525" frictionloss="0.0" />
+                                        <geom type="mesh" contype="0" conaffinity="0" group="1" mesh="link6_vis" name="link6_visual" rgba="1 1 1 1"/>
+                                        <geom class="collision" type="mesh" mesh="link6_vis" />
+                                        <body name="link7" pos="0.088 0 0" quat="0.707107 0.707107 0 0">
+                                            <inertial euler="0 0 0" pos="0 0 0.08" mass="0.5" diaginertia="0.05 0.05 0.05" />
+                                            <joint name="joint7" axis="0 0 1" limited="true" range="-2.8973 2.8973" frictionloss="0.0"/>
+                                            <!--<joint name="joint7" axis="0 0 1" limited="true" range="-2.8973 2.8973" frictionloss="0.01"/> -->
+                                            <geom type="mesh" contype="0" conaffinity="0" group="1" mesh="link7_vis" name="link7_visual" rgba="1 1 1 1"/>
+                                            <geom class="collision" type="mesh" mesh="link7_vis" />
+                                            <!--<body pos="0 0 0.12185" quat="0.924 0 0 -0.383"
+                                            
+                                            <site name="ee_xx" pos="0.05 0 0" size="0.005 .1"  quat="0.707105 0 0.707108 0 " rgba="1 0 0 1" type="cylinder" group="1"/>
+                                            <site name="ee_zz" pos="0 0 0.05" size="0.005 .1" quat="0.707105 0 0 0.707108" rgba="0 0 1 1" type="cylinder" group="1"/>
+                                            <site name="ee_yy" pos="0 0.05 0" size="0.005 .1" quat="0.707105 0.707108 0 0" rgba="0 1 0 1" type="cylinder" group="1"/>
+                                            -->
+                                            <!--<body name = "force_sensor" pos=" 0 0 0.12185" quat = "0 0.99144486 -0.13052619 0">-->
+                                            <body name = "force_sensor" pos=" 0 0 0.126" quat = "0.9914449 0 0 -0.1305262">
+                                                <geom class="collision" euler="0 0 0" pos="0 0 0.0" size="0.0125 0.019" type="cylinder"/>
+                                                <site name="peg_ft_site" pos="0 0 0.011" euler="0 0 0" size="0.005, 0.005, 0.005" rgba="0 0 0 1"/>
+                                                <!--
+                                                <site name="ee_xxx" pos="0.05 0 0.019" size="0.005 .1"  quat="0.707105 0 0.707108 0 " rgba="1 0 0 1" type="cylinder" group="1"/>
+                                                <site name="ee_zzz" pos="0 0 0.069" size="0.005 .1" quat="0.707105 0 0 0.707108" rgba="0 0 1 1" type="cylinder" group="1"/>
+                                                <site name="ee_yyy" pos="0 0.05 0.019" size="0.005 .1" quat="0.707105 0.707108 0 0" rgba="0 1 0 1" type="cylinder" group="1"/>
+                                                -->
+                                                <!--<body name="right_hand" pos="0 0 -0.00485" quat="0 0.9659249 0.258823 0">-->
+                                                <!-- <body name="right_hand" pos="0 0 0.019" quat="0.9659258 0 0 -0.258819"> -->
+                                                    <!-- <inertial pos="0 0 0" mass="0.5" diaginertia="0.05 0.05 0.05" /> -->
+                                                    <!-- This sites were added for visualization. -->
+                                                    <!-- <geom class="collision" type="mesh" mesh="hand_vis" name="hand_collision"/> -->
+                                                    <!-- <geom type="mesh" contype="0" conaffinity="0" group="1" mesh="hand_vis" name="hand_visual" material="hand_mat"/> -->
+                                                    <!-- This site was added for visualization. 
+                                                    <site name="grip_site" pos="0 0 0.097" size="0.01 0.01 0.01" rgba="1 0 0 1" type="sphere" group="1"/>
+                                                    <site name="grip_site_cylinder" pos="0 0 0.1399" size="0.005 10" rgba="0 1 0 0.3" type="cylinder" group="1"/>
+                                                    
+                                                    
+                                                    <site name="ee" pos="0 0 0" size="0.01 0.01 0.01" rgba="0 0 1 1" type="sphere" group="1"/>
+                                                    -->
+                                                    
+                                                    <!-- <site name="ee_x" pos="0.05 0 0.123" size="0.005 .1"  quat="0.707105 0 0.707108 0 " rgba="1 0 0 1" type="cylinder" group="1"/>
+                                                    <site name="ee_z" pos="0 0 0.05" size="0.005 .1" quat="0.707105 0 0 0.707108" rgba="0 0 1 1" type="cylinder" group="1"/>
+                                                    <site name="ee_y" pos="0 0.05 0.123" size="0.005 .1" quat="0.707105 0.707108 0 0" rgba="0 1 0 1" type="cylinder" group="1"/> -->
+                                                    
+                                                    
+
+                                                    <!-- <site name="gripper" pos="0 0 0.123" euler="0 0 0" size="0.005, 0.005, 0.005" rgba="0 0 0 0"/> -->
+                                                    
+                                                    <!--
+                                                        <body name="rs2_camera"  pos="0.09 0.0 0.0" quat="0.707 0 0 -0.707">
+                                                        <inertial pos="0 0 0" mass="0.5" diaginertia="0.05 0.05 0.05" />
+                                                        <geom class="collision" type="mesh" mesh="rs_camera" name="rs_camera_col" rgba="0 0 1 1"/>
+                                                        <geom type="mesh" contype="0" conaffinity="0" group="1" mesh="rs_camera" name="rs_camera_visual" rgba="0 0 1 1"/>
+                                                        
+                                                        <site name="ee_x_cam" pos="0.05 0 0.123" size="0.005 .1"  quat="0.707105 0 0.707108 0 " rgba="1 0 0 1" type="cylinder" group="1"/>
+                                                        <site name="ee_z_cam" pos="0 0 0.05" size="0.005 .1" quat="0.707105 0 0 0.707108" rgba="0 0 1 1" type="cylinder" group="1"/>
+                                                        <site name="ee_y_cam" pos="0 0.05 0.123" size="0.005 .1" quat="0.707105 0.707108 0 0" rgba="0 1 0 1" type="cylinder" group="1"/>
+                                                        
+                                                    </body>
+
+                                                    <body name="rs2_camera_2"  pos="-0.09 0 0" quat="0.707 0 0 -0.707">
+                                                        <inertial pos="0 0 0" mass="0.5" diaginertia="0.05 0.05 0.05" />
+                                                        <geom class="collision" type="mesh" mesh="rs_camera" name="rs_camera_col_2" rgba="0 0 1 1"/>
+                                                        <geom type="mesh" contype="0" conaffinity="0" group="1" mesh="rs_camera" name="rs_camera_visual_2" rgba="0 0 1 1"/>
+                                                        
+                                                        <site name="ee_x_cam" pos="0.05 0 0.123" size="0.005 .1"  quat="0.707105 0 0.707108 0 " rgba="1 0 0 1" type="cylinder" group="1"/>
+                                                        <site name="ee_z_cam" pos="0 0 0.05" size="0.005 .1" quat="0.707105 0 0 0.707108" rgba="0 0 1 1" type="cylinder" group="1"/>
+                                                        <site name="ee_y_cam" pos="0 0.05 0.123" size="0.005 .1" quat="0.707105 0.707108 0 0" rgba="0 1 0 1" type="cylinder" group="1"/>
+                                                        
+                                                    </body>
+                                                    -->
+
+                                                    
+
+                                                    <!-- <camera mode="fixed" fovy="45" name="realsense" pos="0.1 0.0 -0.09" quat="0 1 0 0"/>
+                                                    <camera mode="fixed" fovy="57" name="realsense2" pos="-0.09 0.0 0.0" quat="0 1 0 0"/> -->
+
+
+                                                    <!-- <body name="leftfinger" pos="0 0 0.0524" quat="1 0 0 0">
+                                                        <inertial pos="0 0 0.05" mass="0.1" diaginertia="0.01 0.01 0.005" />
+                                                        <joint name="finger_joint1" pos="0 0 0" axis="0 1 0" type="slide" limited="true" range="0.0 0.04" damping="1" stiffness="10"/>
+                                                        <geom type="mesh" conaffinity="1" contype="0" solref="0.02 1" friction="1 0.005 0.0001" condim="4" mesh="finger_vis" name="finger1_collision"/>
+                                                        <geom type="mesh" contype="0" conaffinity="0" group="1" mesh="finger_vis" name="finger1_visual" material="finger_mat"/>
+                                                        <body name="finger_joint1_tip" pos="0 0.0085 0.056">
+                                                            <inertial pos="0 0 0" quat="0 0 0 1" mass="0.01" diaginertia="0.01 0.01 0.01" />
+                                                            <geom class="collision" size="0.01 0.004 0.03" pos="0 -0.005 0.01" quat="0 0 0 1" type="box" solimp="0.998 0.998 0.001" solref="0.001 1" conaffinity="1" contype="0" name="finger1_tip_collision" rgba="1 1 1 0.8"/>
+                                                            <site name="gripper_left" pos="0 -0.008 0" euler="0 0 0" size="0.005, 0.005, 0.005" rgba="0 0 0 0"/>
+                                                        </body>
+                                                    </body> -->
+
+                                                    <!-- <body name="rightfinger" pos="0 0 0.0524" quat="1 0 0 0">
+                                                        <inertial pos="0 0 0.05" mass="0.1" diaginertia="0.01 0.01 0.005" />
+                                                        <joint name="finger_joint2" pos="0 0 0" axis="0 1 0" type="slide" limited="true" range="-0.04 0.0" damping="1" stiffness="10"/>
+                                                        <geom quat="0 0 0 1" type="mesh" contype="0" conaffinity="0" group="1" mesh="finger_vis" name="finger2_visual" material="finger_mat"/>
+                                                        <geom quat="0 0 0 1" type="mesh" conaffinity="1" contype="0" solref="0.02 1" friction="1 0.005 0.0001" condim="4" mesh="finger_vis" name="finger2_collision"/>
+                                                        <body name="finger_joint2_tip" pos="0 -0.0085 0.056">
+                                                            <inertial pos="0 0 0" quat="0 0 0 1" mass="0.01" diaginertia="0.01 0.01 0.01" />
+                                                            <geom class="collision" size="0.01 0.004 0.03" pos="0 0.005 0.01" quat="0 0 0 1" type="box" solimp="0.998 0.998 0.001" solref="0.001 1" conaffinity="1" contype="0" name="finger2_tip_collision" rgba="1 1 1 0.8"/>
+                                                            <site name="gripper_right" pos="0 0.008 0" euler="0 0 0" size="0.005, 0.005, 0.005" rgba="0 0 0 0" />
+                                                        </body>
+                                                    </body> -->
+
+                                                    <!--This setting is only valid if the square is fixed to the girpper-->
+                                                    <!-- <body name='square' pos="0.0 0.0 0.13" quat="1 0 0 0">
+                                                        <inertial euler="0 0 0" pos="0 0 0.0015" mass="0.015" diaginertia="0.000002369250000 0.000002369250000 0.0000023692500000" />
+                                                        <geom class="collision" condim="4" type="mesh" mesh="square" material="wooden_square" solimp ="0.99 0.999 0.0001" solref="0.001 1" name="geom_square" />
+                                                        <geom class="collision" type="mesh" mesh="square" rgba="1 0.55 0.796 1"/>
+                                                        <site name="obj_square_bottom" pos="0 0 0.03" euler="0 0 0" size="0.005, 0.005, 0.005" rgba="0 0 0 0"/> -->
+                                                        <!--
+                                                        <site name="ee_111" pos="0.05 0 0.03" size="0.005 .1"  quat="0.707105 0 0.707108 0 " rgba="1 0 0 1" type="cylinder" group="1"/>
+                                                        <site name="ee_222" pos="0 0 0.08" size="0.005 .1" quat="0.707105 0 0 0.707108" rgba="0 0 1 1" type="cylinder" group="1"/>
+                                                        <site name="ee_333" pos="0 0.05 0.03" size="0.005 .1" quat="0.707105 0.707108 0 0" rgba="0 1 0 1" type="cylinder" group="1"/>
+                                                        -->
+                                                    <!-- </body> -->
+
+                                                <!-- </body>     -->
+                                            </body>
+
+                                            
+                                        </body>
+                                    </body>
+                                </body>
+                            </body>
+                        </body>
+                    </body>
+                </body>
+            </body>
+        </body>
+
+        
+
+        <!--square-->
+        <!-- <body name='square_hole' pos="0.5 0.1 1.13">
+            <inertial euler="0 0 0" pos="0 0 0.0" mass="0.011" diaginertia="0.000001498986290 0.000001498986290 0.000001242324943" />
+            <geom class="collision" friction="0.1 0.1 0.1" type="mesh" name="four_1" mesh="four_1" solimp ="0.99 0.999 0.0001" />
+            <geom class="collision" friction="0.1 0.1 0.1" type="mesh" name="four_2" mesh="four_2" solimp ="0.99 0.999 0.0001"  /> 
+            <geom class="collision" friction="0.1 0.1 0.1" type="mesh" name="four_3" mesh="four_3" solimp ="0.99 0.999 0.0001"  />
+            <geom class="collision" friction="0.1 0.1 0.1" type="mesh" name="four_4" mesh="four_4" solimp ="0.99 0.999 0.0001" />
+            <site name="square_top" pos="0.036 0.034 0.01" euler="0 0 0" rgba="0 0 0 0" /> -->
+            <!--
+            <site name="ee_11" pos="0.05 0 0" size="0.005 .1"  quat="0.707105 0 0.707108 0 " rgba="1 0 0 1" type="cylinder" group="1"/>
+            <site name="ee_22" pos="0 0 0.05" size="0.005 .1" quat="0.707105 0 0 0.707108" rgba="0 0 1 1" type="cylinder" group="1"/>
+            <site name="ee_33" pos="0 0.05 0" size="0.005 .1" quat="0.707105 0.707108 0 0" rgba="0 1 0 1" type="cylinder" group="1"/>
+            -->
+        <!-- </body> -->
+        
+
+        <body pos=".15 0 1.015" mocap="true">
+            <geom name="wooden_piece" class="collision" euler="0 0 0" pos="0.4 0 0" size="0.5 0.5 .015" type="box" friction="1.0 1.0 1.0" solimp="0.7 0.7 0" material="real_bg"/> 
+        </body>
+        
+
+    </worldbody>
+    <actuator>
+    <!-- Physical limits of the actuator. -->
+        <motor ctrllimited="true" ctrlrange="-80.0 80.0" joint="joint1" name="torq_right_j1" />
+        <motor ctrllimited="true" ctrlrange="-80.0 80.0" joint="joint2" name="torq_right_j2" />
+        <motor ctrllimited="true" ctrlrange="-80.0 80.0" joint="joint3" name="torq_right_j3" />
+        <motor ctrllimited="true" ctrlrange="-80.0 80.0" joint="joint4" name="torq_right_j4" />
+        <motor ctrllimited="true" ctrlrange="-80.0 80.0" joint="joint5" name="torq_right_j5" />
+        <motor ctrllimited="true" ctrlrange="-12.0 12.0" joint="joint6" name="torq_right_j6" />
+        <motor ctrllimited="true" ctrlrange="-12.0 12.0" joint="joint7" name="torq_right_j7" />
+        <!-- <position ctrllimited="true" ctrlrange="0.0 0.04" joint="finger_joint1" kp="100000" gear="1" name="gripper_finger_joint1" forcelimited="true" forcerange="-2 2"/>
+        <position ctrllimited="true" ctrlrange="-0.04 0.0" joint="finger_joint2" kp="100000" gear="1" name="gripper_finger_joint2" forcelimited="true" forcerange="-2 2"/> -->
+    </actuator>                                                                      
+
+   
+    <sensor>
+        <force name="peg_force_sensor" site="peg_ft_site"/>
+        <torque name="peg_torque_sensor" site="peg_ft_site"/>
+        <!-- <force name='gripper_sensor_left' site="gripper_left"/>
+        <force name='gripper_sensor_right' site="gripper_right"/> -->
+    </sensor>
+  
+
+    
+</mujoco>

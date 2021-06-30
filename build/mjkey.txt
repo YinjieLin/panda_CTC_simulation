@@ -1,0 +1,20 @@
+MuJoCo Pro Personal license activation key, number 78730, type 6.
+
+Issued to Yinjie Lin <yjlin@zju.edu.cn>.
+
+Expires May 6, 2022.
+
+This file activates MuJoCo Pro on a single computer with id:
+LINUX_67S0rVVirtual6_351644a36b97478f96f4b003377M2we0368
+
+Do not modify this file. Its entire content, including the
+plain text section, is used by the activation manager.
+
+43d4aacdb27752c5c6f8b5e1ad2eb75f8dd4b290c08b4c9ea3768d1a76ba0eb7
+04985f4f50f692c6011ea353832fc99635d0bba9e51e94ba516f4faeb87e43b5
+18d3e87f95ca3b43e0a8e8c053dff71c6a38b33246852ee8f92ea12d7b2ec3f3
+3dac69b80eaf3f37ca7acaba8c374009f334c252e10572bfef2dc00e9cf5759e
+8bcb1004ce112c3f3677e6c3c64a66fb0faf523861ba3043294e6ee24e0ae93f
+b805353a6e9f9dd928ff9b2309702aabb6e4cece3f0e6e42c714842aba8b4bc7
+c9697959e5b0e70d1d1ba516673de23c16f5ed1e2f5744f6099fa5d1e1be9114
+6f19f8d605864b1ae2c6a11f23dbe5e6fed77105c308264339982467edf9e1c8

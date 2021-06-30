@@ -1,0 +1,1 @@
+/usr/bin/c++      CMakeFiles/panda_sim_mujoco.dir/src/my_sim_CTC.cpp.o  -o panda_sim_mujoco  -L/home/yjlin/.mujoco/mujoco200/bin -lmujoco200 -lGL -lGLU -lglut -lglew /home/yjlin/.mujoco/mujoco200/bin/libglfw.so.3 -Wl,-rpath,/home/yjlin/.mujoco/mujoco200/bin 
