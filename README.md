@@ -1,5 +1,4 @@
-This is a example of Franka Panda simulation based on Mujoco.
-
+This project is an example of Franka Panda simulation based on Mujoco.
 ## Dependencies
 - Mujoco200
 - Eigen 3
